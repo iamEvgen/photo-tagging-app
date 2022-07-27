@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import NavHome from '../components/NavHome';
 
 function Home() {
-  const gamePoster1 = require(`../images/robot-city-main.jpeg`);
-  const gamePoster2 = require(`../images/underground-main.jpeg`);
-  const gamePoster3 = require(`../images/cyberpunk-main.jpeg`);
+  const gamePoster1 = require(`../images/games/robot-city-main.jpeg`);
+  const gamePoster2 = require(`../images/games/underground-main.jpeg`);
+  const gamePoster3 = require(`../images/games/cyberpunk-main.jpeg`);
 
   return (
     <div>

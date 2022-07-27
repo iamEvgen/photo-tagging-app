@@ -8,14 +8,8 @@ function App() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/game/:id"
-          element={<Game />}
-        />
-        <Route
-          path="/leaderboard"
-          element={<Leaderboard />}
-        />
+        <Route path="/game/:id" element={<Game />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </BrowserRouter>
   );
