@@ -1,0 +1,44 @@
+.navGame {
+  background-color: black;
+  color: var(--lightgray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100px;
+}
+
+.navgame--home-link,
+.navgame--leaderboard-link {
+  text-decoration: none;
+  color: var(--lightgray);
+}
+
+.navgame--counter {
+  margin-right: auto;
+  margin-left: 20px;
+  font-size: 2rem;
+  color: var(--lightyellow);
+}
+
+.navgame--home-link {
+  margin-left: auto;
+}
+
+.navgame--leaderboard-link {
+  margin-right: 20px;
+}
+
+.navgame-hero-avatar {
+  width: 90px;
+  margin: 0 10px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.navgame-hero-avatar:hover {
+  transform: translateY(45px) scale(2);
+  z-index: 101;
+  border-radius: 10px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavHome from '../components/NavHome';
+import './home.css';
 
 function Home() {
   const gamePoster1 = require(`../images/games/robot-city-main.jpeg`);
@@ -10,22 +11,34 @@ function Home() {
   return (
     <div>
       <NavHome />
-      <div className='home--content'>
-        <div className='home--title'>Choose a level:</div>
+      <div className="home--content">
+        <div className="home--title">Choose a level:</div>
         <div className="home--games">
-        <Link className='home--image-container' to={`/game/0`}>
-          <img className="home--image" src={gamePoster1} alt="robot city poster" />
-          <div className='home--text-on-image'>Robo City</div>
-        </Link>
-        <Link className='home--image-container' to={`/game/1`}>
-          <img className="home--image" src={gamePoster2} alt="robot city poster" />
-          <div className='home--text-on-image'>Universe 113</div>
-        </Link>
-        <Link className='home--image-container' to={`/game/2`}>
-          <img className="home--image" src={gamePoster3} alt="robot city poster" />
-          <div className='home--text-on-image'>Cyberpunk</div>
-        </Link>
-      </div>
+          <Link className="home--image-container" to={`/game/0`}>
+            <img
+              className="home--image"
+              src={gamePoster1}
+              alt="robot city poster"
+            />
+            <div className="home--text-on-image">Robo City</div>
+          </Link>
+          <Link className="home--image-container" to={`/game/1`}>
+            <img
+              className="home--image"
+              src={gamePoster2}
+              alt="robot city poster"
+            />
+            <div className="home--text-on-image">Universe 113</div>
+          </Link>
+          <Link className="home--image-container" to={`/game/2`}>
+            <img
+              className="home--image"
+              src={gamePoster3}
+              alt="robot city poster"
+            />
+            <div className="home--text-on-image">Cyberpunk</div>
+          </Link>
+        </div>
       </div>
     </div>
   );

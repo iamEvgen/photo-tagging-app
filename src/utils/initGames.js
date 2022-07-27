@@ -1,6 +1,7 @@
 const initGames = [
   { 
     gameId: 0,
+    name: 'Robot city',
     background: 'images/games/robot-city-game.jpeg',
     heroes: [
       {
@@ -28,7 +29,8 @@ const initGames = [
   },
   { 
     gameId: 1,
-    background: 'images/underground-game.jpeg',
+    name: 'Universe 113',
+    background: 'images/games/underground-game.jpeg',
     heroes: [
       {
         heroId: 0,
@@ -55,7 +57,8 @@ const initGames = [
   },
   { 
     gameId: 2,
-    background: 'images/cyberpunk-game.jpeg',
+    name: 'Cyberpunk',
+    background: 'images/games/cyberpunk-game.jpeg',
     heroes: [
       {
         heroId: 0,

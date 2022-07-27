@@ -1,0 +1,34 @@
+.navHome {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.navhome--logo {
+  font-size: 2rem;
+  font-family: 'Bungee Shade', cursive;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Monoton', cursive;
+  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Frijole', cursive;
+  color: var(--lightyellow);
+  margin-left: 20px;
+}
+
+.navhome--leaderboradLink {
+  text-decoration: none;
+  color: var(--lightgray);
+  margin-right: 20px;
+  font-size: 1.3rem;
+}
+
+.navhome--leaderboradLink:hover {
+  color: var(--lightyellow);
+}
+
+.navhome--rating-icon {
+  width: 30px;
+  margin-right: 5px;
+}
