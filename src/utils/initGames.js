@@ -57,7 +57,7 @@ const initGames = [
           yMin: 0.6169265033407573,
           yMax: 0.6351150705270973,
         },
-        found: true
+        found: false
       },
       {
         heroId: 1,
@@ -69,7 +69,7 @@ const initGames = [
           yMin: 0.34558277654046027,
           yMax: 0.3752783964365256,
         },
-        found: true
+        found: false
       },
       {
         heroId: 2,
@@ -124,7 +124,7 @@ const initGames = [
           yMin: 0.8300028145229383,
           yMax: 0.8502673796791443,
         },
-        found: true
+        found: false
       },
     ]
   },

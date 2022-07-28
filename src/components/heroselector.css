@@ -20,6 +20,7 @@
 
 .heroSelector--hero:hover {
   background-color: var(--lightyellow);
+  cursor: pointer;
 }
 
 .heroSelector--hero:hover * {

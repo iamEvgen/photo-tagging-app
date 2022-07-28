@@ -2,15 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import NavGame from '../components/NavGame';
 import HeroSelector from '../components/HeroSelector';
+import initGames from '../utils/initGames';
 import './game.css';
 
 function Game(props) {
-  const params = useParams();
-  const backgroundImage = require(`../${
-    props.games[params.gameId].background
-  }`);
-  const cursor = require('../images/cursor.png');
-
+  const [games, setGames] = React.useState(initGames);
   const [showHeroSelector, setShowHeroSelector] = React.useState(false);
   const [coords, setCoords] = React.useState({
     x: 0,
@@ -20,7 +16,10 @@ function Game(props) {
     moveX: false,
     moveY: false,
   });
-  // const [state, setState] = React.useState();
+
+  const gameId = useParams().gameId;
+  const backgroundImage = require(`../${games[gameId].background}`);
+  const cursor = require('../images/cursor.png');
 
   function handleCoords(event) {
     showHeroSelectorToggle();
@@ -38,25 +37,26 @@ function Game(props) {
     setShowHeroSelector(!showHeroSelector);
   }
 
+  function handleHeroClick(xInPercent, yInPercent, heroId,) {
+    return
+  }
+
   const gameBackGroundStyle = showHeroSelector
     ? { cursor: 'auto' }
     : { cursor: `url(${cursor}) 50 50, auto` };
 
   return (
     <div className="game">
-      <NavGame game={props.games[params.gameId]} />
+      <NavGame game={games[gameId]} />
       <div onClick={handleCoords} className="game--container">
         <img
           className="game--background"
           src={backgroundImage}
-          alt={props.games[params.name]}
+          alt={games[gameId].name}
           style={gameBackGroundStyle}
         />
         {showHeroSelector && (
-          <HeroSelector
-            coords={coords}
-            heroes={props.games[params.gameId].heroes}
-          />
+          <HeroSelector coords={coords} heroes={games[gameId].heroes} handleHeroClick={handleHeroClick}/>
         )}
         {showHeroSelector && (
           <img
