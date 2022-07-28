@@ -10,16 +10,49 @@ function NavGame(props) {
   const heroAvatar3 = require(`../${props.game.heroes[2].url}`);
   const heroName3 = props.game.heroes[2].name;
 
+  const ratingIcon = require('../images/rating.png');
+  const homeIcon = require('../images/home.png');
+
+  const avatarStyles = [];
+  props.game.heroes.forEach((hero) => {
+    if (hero.found) {
+      avatarStyles.push({ opacity: 0.5 });
+    } else {
+      avatarStyles.push({});
+    }
+  });
+
   return (
     <div className="navGame">
       <div className="navgame--counter">00:07</div>
-      <img className="navgame-hero-avatar" src={heroAvatar1} alt={heroName1} />
-      <img className="navgame-hero-avatar" src={heroAvatar2} alt={heroName2} />
-      <img className="navgame-hero-avatar" src={heroAvatar3} alt={heroName3} />
-      <Link className="navgame--home-link" to={'/'}>
+      <img
+        className="navgame--hero-avatar"
+        src={heroAvatar1}
+        alt={heroName1}
+        style={avatarStyles[0]}
+      />
+      <img
+        className="navgame--hero-avatar"
+        src={heroAvatar2}
+        alt={heroName2}
+        style={avatarStyles[1]}
+      />
+      <img
+        className="navgame--hero-avatar need-margin"
+        src={heroAvatar3}
+        alt={heroName3}
+        style={avatarStyles[2]}
+      />
+      <Link className="nav-link" to={'/'}>
+        <img
+          className="nav-icon navgame--home"
+          src={homeIcon}
+          alt="rating icon"
+        />
         Home
       </Link>
-      <Link className="navgame--leaderboard-link" to={'/leaderboard'}>
+      <Link className="nav-link" to={'/leaderboard'}>
+        <img className="nav-icon" src={ratingIcon} alt="rating icon" />
         Leaderboard
       </Link>
     </div>

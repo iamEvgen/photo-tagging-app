@@ -17,18 +17,20 @@
   margin-left: 20px;
 }
 
-.navhome--leaderboradLink {
+.nav-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: var(--lightgray);
   margin-right: 20px;
   font-size: 1.3rem;
 }
 
-.navhome--leaderboradLink:hover {
+.nav-link:hover {
   color: var(--lightyellow);
 }
 
-.navhome--rating-icon {
+.nav-icon {
   width: 30px;
   margin-right: 5px;
 }

@@ -8,12 +8,6 @@
   height: 100px;
 }
 
-.navgame--home-link,
-.navgame--leaderboard-link {
-  text-decoration: none;
-  color: var(--lightgray);
-}
-
 .navgame--counter {
   margin-right: auto;
   margin-left: 20px;
@@ -21,15 +15,7 @@
   color: var(--lightyellow);
 }
 
-.navgame--home-link {
-  margin-left: auto;
-}
-
-.navgame--leaderboard-link {
-  margin-right: 20px;
-}
-
-.navgame-hero-avatar {
+.navgame--hero-avatar {
   width: 90px;
   margin: 0 10px;
   border-radius: 50%;
@@ -37,8 +23,12 @@
   z-index: 100;
 }
 
-.navgame-hero-avatar:hover {
+.navgame--hero-avatar:hover {
   transform: translateY(45px) scale(2);
   z-index: 101;
-  border-radius: 10px;
+  opacity: 1 !important;
+}
+
+.need-margin {
+  margin-right: auto;
 }
