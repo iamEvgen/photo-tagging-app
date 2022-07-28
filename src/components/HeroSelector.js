@@ -32,25 +32,25 @@ function HeroSelector(props) {
   let style = {
     left: `${props.coords.x}px`,
     top: `${props.coords.y}px`,
-    'border-radius': '0 20px 20px 20px',
+    'borderRadius': '0 20px 20px 20px',
   };
   if (moveX && !moveY) {
     style = {
       left: `${props.coords.x - 220}px`,
       top: `${props.coords.y}px`,
-      'border-radius': '20px 0px 20px 20px',
+      'borderRadius': '20px 0px 20px 20px',
     };
   } else if (!moveX && moveY) {
     style = {
       left: `${props.coords.x}px`,
       top: `${props.coords.y - offset[activeHeroes.length]}px`,
-      'border-radius': '20px 20px 20px 0',
+      'borderRadius': '20px 20px 20px 0',
     };
   } else if (moveX && moveY) {
     style = {
       left: `${props.coords.x - 220}px`,
       top: `${props.coords.y - offset[activeHeroes.length]}px`,
-      'border-radius': '20px 20px 0 20px',
+      'borderRadius': '20px 20px 0 20px',
     };
   }
 

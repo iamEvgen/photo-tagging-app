@@ -3,11 +3,17 @@ import { useParams } from 'react-router-dom';
 import NavGame from '../components/NavGame';
 import HeroSelector from '../components/HeroSelector';
 import initGames from '../utils/initGames';
+import Alert from '../components/Alert';
 import './game.css';
 
 function Game(props) {
   const [games, setGames] = React.useState(initGames);
   const [showHeroSelector, setShowHeroSelector] = React.useState(false);
+  const [showAlert, setShowAlert] = React.useState({
+    show: false,
+    message: '',
+    color: 'green',
+  });
   const [coords, setCoords] = React.useState({
     x: 0,
     y: 0,
@@ -30,15 +36,47 @@ function Game(props) {
     const offsetX = event.target.offsetWidth - event.pageX;
     const offsetY = event.target.offsetHeight - event.pageY + 100;
     setCoords({ x, y, xInPercent, yInPercent, offsetX, offsetY });
-    console.log(`X: ${xInPercent}, Y: ${yInPercent}`);
+    // console.log(`X: ${xInPercent}, Y: ${yInPercent}`);
   }
 
   function showHeroSelectorToggle() {
     setShowHeroSelector(!showHeroSelector);
   }
 
-  function handleHeroClick(xInPercent, yInPercent, heroId,) {
-    return
+  function handleHeroClick(xInPercent, yInPercent, heroId) {
+    const newGames = games;
+    let searchResult = false;
+    let heroName;
+    newGames[gameId].heroes.forEach((hero) => {
+      if (
+        heroId === hero.heroId &&
+        xInPercent > hero.coords.xMin &&
+        xInPercent < hero.coords.xMax &&
+        yInPercent > hero.coords.yMin &&
+        yInPercent < hero.coords.yMax
+      ) {
+        heroName = hero.name;
+        hero.found = true;
+        searchResult = true;
+      }
+    });
+    setGames(newGames);
+
+    if (searchResult) {
+      setShowAlert({
+        show: true,
+        message: `Good job! ${heroName} is found!`,
+        color: '#74992e',
+      });
+    } else {
+      setShowAlert({ show: true, message: 'Nope! Try again!', color: '#f5bf2b' });
+    }
+    setTimeout(() => {
+      setShowAlert({
+        ...showAlert,
+        show: false,
+      });
+    }, 2000);
   }
 
   const gameBackGroundStyle = showHeroSelector
@@ -56,7 +94,11 @@ function Game(props) {
           style={gameBackGroundStyle}
         />
         {showHeroSelector && (
-          <HeroSelector coords={coords} heroes={games[gameId].heroes} handleHeroClick={handleHeroClick}/>
+          <HeroSelector
+            coords={coords}
+            heroes={games[gameId].heroes}
+            handleHeroClick={handleHeroClick}
+          />
         )}
         {showHeroSelector && (
           <img
@@ -68,6 +110,9 @@ function Game(props) {
             src={cursor}
             alt="cursor"
           />
+        )}
+        {showAlert.show && (
+          <Alert message={showAlert.message} color={showAlert.color} />
         )}
       </div>
     </div>
