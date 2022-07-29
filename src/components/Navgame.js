@@ -12,6 +12,7 @@ function NavGame(props) {
 
   const ratingIcon = require('../images/rating.png');
   const homeIcon = require('../images/home.png');
+  const reloadIcon = require('../images/reload.png');
 
   const avatarStyles = [];
   props.game.heroes.forEach((hero) => {
@@ -24,9 +25,13 @@ function NavGame(props) {
 
   return (
     <div className="navGame">
-      <div className="navgame--counter">00:07</div>
+      <div className='navgame--spacer'></div>
+      <div className="timerAndReloader">
+        <div className="navgame--counter">{props.timer}</div>
+        <img onClick={props.resetGame} className="nav-icon reload-button" src={reloadIcon} alt="reload icon" />
+      </div>
       <img
-        className="navgame--hero-avatar"
+        className="navgame--hero-avatar need-margin-left"
         src={heroAvatar1}
         alt={heroName1}
         style={avatarStyles[0]}
@@ -38,7 +43,7 @@ function NavGame(props) {
         style={avatarStyles[1]}
       />
       <img
-        className="navgame--hero-avatar need-margin"
+        className="navgame--hero-avatar need-margin-right"
         src={heroAvatar3}
         alt={heroName3}
         style={avatarStyles[2]}

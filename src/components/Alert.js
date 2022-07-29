@@ -3,7 +3,7 @@ import './alert.css';
 
 function Alert(props) {
   const style = {
-    'background-color': props.color,
+    'backgroundColor': props.color,
   };
   return <div style={style} className="alert">{props.message}</div>;
 }

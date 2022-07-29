@@ -6,13 +6,13 @@ import initGames from '../utils/initGames';
 import Alert from '../components/Alert';
 import './game.css';
 
-function Game(props) {
+function Game() {
   const [games, setGames] = React.useState(initGames);
   const [showHeroSelector, setShowHeroSelector] = React.useState(false);
   const [showAlert, setShowAlert] = React.useState({
     show: false,
     message: '',
-    color: 'green',
+    color: 'red',
   });
   const [coords, setCoords] = React.useState({
     x: 0,
@@ -23,11 +23,46 @@ function Game(props) {
     moveY: false,
   });
 
+  // Timer
+  const [timer, setTimer] = React.useState('00:00');
+  const [startTime, setStartTime] = React.useState(new Date());
+
+  React.useEffect(() => {
+    setStartTime(new Date());
+    const intervalId = setInterval(timerCounter, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  function timerCounter() {
+    console.log(startTime);
+    const diff = Date.parse(new Date()) - Date.parse(startTime);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    setTimer(
+      (minutes > 9 ? minutes : '0' + minutes) +
+        ':' +
+        (seconds > 9 ? seconds : '0' + seconds)
+    );
+  }
+  // End of timer
+
+  function resetGame() {
+    setStartTime(new Date());
+    console.log('i am reseter');
+    console.log('startTime is: ' + startTime);
+    const newGames = games;
+    newGames[gameId].heroes.forEach((hero) => {
+      hero.found = false;
+    });
+    setGames(newGames);
+  }
+
   const gameId = useParams().gameId;
   const backgroundImage = require(`../${games[gameId].background}`);
   const cursor = require('../images/cursor.png');
 
   function handleCoords(event) {
+    if (showAlert.show) return;
     showHeroSelectorToggle();
     const x = event.pageX;
     const y = event.pageY - 100;
@@ -69,14 +104,18 @@ function Game(props) {
         color: '#74992e',
       });
     } else {
-      setShowAlert({ show: true, message: 'Nope! Try again!', color: '#f5bf2b' });
+      setShowAlert({
+        show: true,
+        message: 'Nope! Try again!',
+        color: 'rgb(222, 78, 78)',
+      });
     }
     setTimeout(() => {
       setShowAlert({
         ...showAlert,
         show: false,
       });
-    }, 2000);
+    }, 3000);
   }
 
   const gameBackGroundStyle = showHeroSelector
@@ -85,7 +124,7 @@ function Game(props) {
 
   return (
     <div className="game">
-      <NavGame game={games[gameId]} />
+      <NavGame game={games[gameId]} timer={timer} resetGame={resetGame}/>
       <div onClick={handleCoords} className="game--container">
         <img
           className="game--background"
