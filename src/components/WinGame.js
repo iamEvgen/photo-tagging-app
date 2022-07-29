@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { writeResult } from '../utils/firebase';
 import './wingame.css';
 
 function WinGame(props) {
@@ -12,7 +13,17 @@ function WinGame(props) {
 
   function saveResult(event) {
     event.preventDefault();
-    console.log('data saved: ' + name + ' ' + props.savedTimer);
+    writeResult(name, props.savedTimer, props.gameId, props.gameName);
+    console.log(
+      'data saved: ' +
+        name +
+        ' ' +
+        props.savedTimer +
+        ' ' +
+        props.gameId +
+        ' ' +
+        props.gameName
+    );
     navigate('/leaderboard');
   }
 

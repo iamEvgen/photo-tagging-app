@@ -172,7 +172,7 @@ function Game() {
         {showAlert.show && !gameover && (
           <Alert message={showAlert.message} color={showAlert.color} />
         )}
-        {gameover && <WinGame savedTimer={savedTimer} />}
+        {gameover && <WinGame savedTimer={savedTimer} gameId={gameId} gameName={games[gameId].name}/>}
       </div>
     </div>
   );
