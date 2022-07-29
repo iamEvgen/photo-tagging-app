@@ -4,6 +4,7 @@ import NavGame from '../components/NavGame';
 import HeroSelector from '../components/HeroSelector';
 import initGames from '../utils/initGames';
 import Alert from '../components/Alert';
+import WinGame from '../components/WinGame';
 import './game.css';
 
 function Game() {
@@ -22,10 +23,12 @@ function Game() {
     moveX: false,
     moveY: false,
   });
+  const [gameover, setGameover] = React.useState(false);
 
   // Timer
   const [timer, setTimer] = React.useState('00:00');
   const [startTime, setStartTime] = React.useState(new Date());
+  const [savedTimer, setSavedTimer] = React.useState('');
 
   React.useEffect(() => {
     const intervalId = setInterval(timerCounter, 1000);
@@ -46,7 +49,9 @@ function Game() {
 
   function resetGame() {
     setTimer('00:00');
+    setSavedTimer('');
     setStartTime(new Date());
+    setGameover(false);
     const newGames = games;
     newGames[gameId].heroes.forEach((hero) => {
       hero.found = false;
@@ -59,7 +64,7 @@ function Game() {
   const cursor = require('../images/cursor.png');
 
   function handleCoords(event) {
-    if (showAlert.show) return;
+    if (showAlert.show || gameover) return;
     showHeroSelectorToggle();
     const x = event.pageX;
     const y = event.pageY - 100;
@@ -99,6 +104,7 @@ function Game() {
         message: `Good job! ${heroName} is found!`,
         color: '#74992e',
       });
+      checkGameover();
     } else {
       setShowAlert({
         show: true,
@@ -114,13 +120,30 @@ function Game() {
     }, 2000);
   }
 
+  function checkGameover() {
+    let gameoverTmp = true;
+    games[gameId].heroes.forEach((hero) => {
+      if (!hero.found) {
+        gameoverTmp = false;
+      }
+    });
+    if (gameoverTmp) {
+      setSavedTimer(timer);
+    }
+    setGameover(gameoverTmp);
+  }
+
   const gameBackGroundStyle = showHeroSelector
     ? { cursor: 'auto' }
     : { cursor: `url(${cursor}) 50 50, auto` };
 
   return (
     <div className="game">
-      <NavGame game={games[gameId]} timer={timer} resetGame={resetGame} />
+      <NavGame
+        game={games[gameId]}
+        timer={savedTimer || timer}
+        resetGame={resetGame}
+      />
       <div onClick={handleCoords} className="game--container">
         <img
           className="game--background"
@@ -146,9 +169,10 @@ function Game() {
             alt="cursor"
           />
         )}
-        {showAlert.show && (
+        {showAlert.show && !gameover && (
           <Alert message={showAlert.message} color={showAlert.color} />
         )}
+        {gameover && <WinGame savedTimer={savedTimer} />}
       </div>
     </div>
   );

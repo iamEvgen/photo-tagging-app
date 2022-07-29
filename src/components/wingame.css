@@ -1,0 +1,40 @@
+.win-game-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: black;
+  color: var(--lightyellow);
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 20px;
+}
+
+.win-game-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.win-game-form input,
+.win-game-form button {
+  font-size: 1.2rem;
+  font-family: 'Jura', sans-serif;
+  padding: 5px;
+  border: 0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.win-game-form button {
+  background-color: var(--lightyellow);
+}
+
+.win-game-form button:hover {
+  cursor: pointer;
+}
