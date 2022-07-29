@@ -28,13 +28,11 @@ function Game() {
   const [startTime, setStartTime] = React.useState(new Date());
 
   React.useEffect(() => {
-    setStartTime(new Date());
     const intervalId = setInterval(timerCounter, 1000);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [startTime]);
 
   function timerCounter() {
-    console.log(startTime);
     const diff = Date.parse(new Date()) - Date.parse(startTime);
     const minutes = Math.floor((diff / 1000 / 60) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
@@ -47,9 +45,8 @@ function Game() {
   // End of timer
 
   function resetGame() {
+    setTimer('00:00');
     setStartTime(new Date());
-    console.log('i am reseter');
-    console.log('startTime is: ' + startTime);
     const newGames = games;
     newGames[gameId].heroes.forEach((hero) => {
       hero.found = false;
@@ -71,7 +68,6 @@ function Game() {
     const offsetX = event.target.offsetWidth - event.pageX;
     const offsetY = event.target.offsetHeight - event.pageY + 100;
     setCoords({ x, y, xInPercent, yInPercent, offsetX, offsetY });
-    // console.log(`X: ${xInPercent}, Y: ${yInPercent}`);
   }
 
   function showHeroSelectorToggle() {
@@ -115,7 +111,7 @@ function Game() {
         ...showAlert,
         show: false,
       });
-    }, 3000);
+    }, 2000);
   }
 
   const gameBackGroundStyle = showHeroSelector
@@ -124,7 +120,7 @@ function Game() {
 
   return (
     <div className="game">
-      <NavGame game={games[gameId]} timer={timer} resetGame={resetGame}/>
+      <NavGame game={games[gameId]} timer={timer} resetGame={resetGame} />
       <div onClick={handleCoords} className="game--container">
         <img
           className="game--background"
