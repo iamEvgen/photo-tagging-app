@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/photo-tagging-app/static/css/main.d65c1867.css",
+    "main.js": "/photo-tagging-app/static/js/main.510e1ffe.js",
+    "static/media/cyberpunk-game.jpeg": "/photo-tagging-app/static/media/cyberpunk-game.6315caff9d7f3a586374.jpeg",
+    "static/media/robot-city-game.jpeg": "/photo-tagging-app/static/media/robot-city-game.7a1ae90d125b02694ca8.jpeg",
+    "static/media/underground-game.jpeg": "/photo-tagging-app/static/media/underground-game.1b9879db019461c88f7f.jpeg",
+    "static/media/robot-city-main.jpeg": "/photo-tagging-app/static/media/robot-city-main.d118ef372b43825050ff.jpeg",
+    "static/media/cyberpunk-main.jpeg": "/photo-tagging-app/static/media/cyberpunk-main.d4233681dfe72608e90c.jpeg",
+    "static/media/underground-main.jpeg": "/photo-tagging-app/static/media/underground-main.34b8b9387e79f38a8a13.jpeg",
+    "static/media/philip-j-fry.jpg": "/photo-tagging-app/static/media/philip-j-fry.77246f37648bcf7006b2.jpg",
+    "static/media/spider-man.jpg": "/photo-tagging-app/static/media/spider-man.2938584e322ac714fb47.jpg",
+    "static/media/arnold.jpg": "/photo-tagging-app/static/media/arnold.bcc5236fa992a199cb6e.jpg",
+    "static/media/earthworm-jim.jpg": "/photo-tagging-app/static/media/earthworm-jim.3b29486b8927d4070531.jpg",
+    "static/media/doctor-zoidberg.jpg": "/photo-tagging-app/static/media/doctor-zoidberg.1ea7f3c746f1ac58d353.jpg",
+    "static/media/stewie.jpg": "/photo-tagging-app/static/media/stewie.40ffb4354616bfcf9641.jpg",
+    "static/media/bender.jpg": "/photo-tagging-app/static/media/bender.b00926d1d18374d69381.jpg",
+    "static/media/johnny-bravo.jpg": "/photo-tagging-app/static/media/johnny-bravo.8b518a420cf1829d9758.jpg",
+    "static/media/catdog.jpg": "/photo-tagging-app/static/media/catdog.eb6a4dc393db3512e6fe.jpg",
+    "index.html": "/photo-tagging-app/index.html",
+    "main.d65c1867.css.map": "/photo-tagging-app/static/css/main.d65c1867.css.map",
+    "main.510e1ffe.js.map": "/photo-tagging-app/static/js/main.510e1ffe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d65c1867.css",
+    "static/js/main.510e1ffe.js"
+  ]
+}
