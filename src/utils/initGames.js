@@ -1,5 +1,5 @@
 const initGames = [
-  { 
+  {
     gameId: 0,
     name: 'Robot city',
     background: 'images/games/robot-city-game.jpeg',
@@ -14,7 +14,7 @@ const initGames = [
           yMin: 0.7706146926536732,
           yMax: 0.8144677661169415,
         },
-        found: false
+        found: false,
       },
       {
         heroId: 1,
@@ -26,7 +26,7 @@ const initGames = [
           yMin: 0.46214392803598203,
           yMax: 0.48650674662668664,
         },
-        found: false
+        found: false,
       },
       {
         heroId: 2,
@@ -38,11 +38,11 @@ const initGames = [
           yMin: 0.5734632683658171,
           yMax: 0.5854572713643178,
         },
-        found: false
+        found: false,
       },
-    ]
+    ],
   },
-  { 
+  {
     gameId: 1,
     name: 'Universe 113',
     background: 'images/games/underground-game.jpeg',
@@ -57,7 +57,7 @@ const initGames = [
           yMin: 0.6169265033407573,
           yMax: 0.6351150705270973,
         },
-        found: false
+        found: false,
       },
       {
         heroId: 1,
@@ -69,7 +69,7 @@ const initGames = [
           yMin: 0.34558277654046027,
           yMax: 0.3752783964365256,
         },
-        found: false
+        found: false,
       },
       {
         heroId: 2,
@@ -81,11 +81,11 @@ const initGames = [
           yMin: 0.45397178916109876,
           yMax: 0.477728285077951,
         },
-        found: false
+        found: false,
       },
-    ]
+    ],
   },
-  { 
+  {
     gameId: 2,
     name: 'Cyberpunk',
     background: 'images/games/cyberpunk-game.jpeg',
@@ -100,7 +100,7 @@ const initGames = [
           yMin: 0.47649873346467775,
           yMax: 0.48719392063045314,
         },
-        found: false
+        found: false,
       },
       {
         heroId: 1,
@@ -112,7 +112,7 @@ const initGames = [
           yMin: 0.5175907683647621,
           yMax: 0.5429214748100197,
         },
-        found: false
+        found: false,
       },
       {
         heroId: 2,
@@ -124,9 +124,9 @@ const initGames = [
           yMin: 0.8300028145229383,
           yMax: 0.8502673796791443,
         },
-        found: false
+        found: false,
       },
-    ]
+    ],
   },
 ];
 

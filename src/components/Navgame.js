@@ -25,10 +25,15 @@ function NavGame(props) {
 
   return (
     <div className="navGame">
-      <div className='navgame--spacer'></div>
+      <div className="navgame--spacer"></div>
       <div className="timerAndReloader">
         <div className="navgame--counter">{props.timer}</div>
-        <img onClick={props.resetGame} className="nav-icon reload-button" src={reloadIcon} alt="reload icon" />
+        <img
+          onClick={props.resetGame}
+          className="nav-icon reload-button"
+          src={reloadIcon}
+          alt="reload icon"
+        />
       </div>
       <img
         className="navgame--hero-avatar need-margin-left"

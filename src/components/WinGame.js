@@ -13,6 +13,7 @@ function WinGame(props) {
 
   function saveResult(event) {
     event.preventDefault();
+    props.resetGame();
     writeResult(name, props.savedTimer, props.gameId, props.gameName);
     console.log(
       'data saved: ' +

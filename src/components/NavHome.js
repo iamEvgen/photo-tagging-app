@@ -18,11 +18,7 @@ function NavHome() {
         Home
       </Link>
       <Link className="nav-link" to={`/leaderboard`}>
-        <img
-          className="nav-icon"
-          src={ratingIcon}
-          alt="rating icon"
-        />
+        <img className="nav-icon" src={ratingIcon} alt="rating icon" />
         Leaderboard
       </Link>
     </div>
