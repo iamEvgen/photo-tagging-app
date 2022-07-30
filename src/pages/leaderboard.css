@@ -1,0 +1,44 @@
+.leaderboard--content {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  background-color: black;
+}
+
+.leaderboard--games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.leaderboard--image-container {
+  position: relative;
+  transition: all 0.2s;
+  width: 150px;
+  border-radius: 20px;
+}
+
+.leaderboard--image-container:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.leaderboard--image {
+  width: 150px;
+  border-radius: 20px;
+}
+
+.leaderboard--table {
+  color: var(--lightgray);
+}
+
+.table-data {
+  text-align: center;
+  width: 150px;
+}

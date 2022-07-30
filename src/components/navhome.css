@@ -1,7 +1,7 @@
 .navHome {
   background-color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   height: 60px;
 }
@@ -11,6 +11,7 @@
   font-family: 'Frijole', cursive;
   color: var(--lightyellow);
   margin-left: 20px;
+  margin-right: auto;
 }
 
 .nav-link {
